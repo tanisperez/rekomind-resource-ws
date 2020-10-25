@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%t] %c{10} - %msg%n%throwable" />
+        </Console>
+    </Appenders>
+ 
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="CONSOLE" />
+        </Root>
+ 
+        <Logger name="org.springframework" level="info"/>
+        <Logger name="com.github.tanisperez.recomendador" level="info"/>
+    </Loggers>
+</Configuration>

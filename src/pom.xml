@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.0.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<groupId>com.github.tanisperez.recomendador</groupId>
+	<artifactId>resource-ws</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>Recomendador Resources WebService</name>
+	<description>Recomendador Resources WebService</description>
+
+	<!-- Properties -->
+	<properties>
+		<!-- General Config -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>11</java.version>
+		<user.language>es</user.language>
+		<argLine>-Duser.language=${user.language}</argLine>
+	</properties>
+
+	<dependencies>
+		<!-- Spring Boot Starter WebFlux -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+			<exclusions>
+				<!-- Spring Default Logging -->
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<!-- Log4J2 Spring Boot Starter -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+	</dependencies>
+	
+	<!-- Profiles -->
+	<profiles>
+		<!-- DEV -->
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<profile.id>dev</profile.id>
+				<profile.name>Development</profile.name>
+			</properties>
+		</profile>
+		<!-- PRE -->
+		<profile>
+			<id>pre</id>
+			<properties>
+				<profile.id>pre</profile.id>
+				<profile.name>Preproduction</profile.name>
+			</properties>
+		</profile>
+		<!-- PRO -->
+		<profile>
+			<id>pro</id>
+			<properties>
+				<profile.id>pro</profile.id>
+				<profile.name>Production</profile.name>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
