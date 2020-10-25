@@ -1,2 +1,2 @@
-# image-ws
-Recomendador Image WebService
+# resource-ws
+Recomendador Resources WebService
