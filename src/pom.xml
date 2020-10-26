@@ -39,14 +39,14 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<!-- Log4J2 Spring Boot Starter -->
 		<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j2</artifactId>
-        </dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
 	</dependencies>
-	
+
 	<!-- Profiles -->
 	<profiles>
 		<!-- DEV -->
@@ -86,4 +86,24 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<!-- Repositories -->
+	<repositories>
+		<!-- Spring Milestones -->
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
+
+		<!-- Spring Snapshots -->
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 </project>
