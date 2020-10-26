@@ -11,7 +11,7 @@
             <AppenderRef ref="CONSOLE" />
         </Root>
  
-        <Logger name="org.springframework" level="trace"/>
+        <Logger name="org.springframework" level="info"/>
         <Logger name="com.github.tanisperez.recomendador" level="info"/>
     </Loggers>
 </Configuration>
