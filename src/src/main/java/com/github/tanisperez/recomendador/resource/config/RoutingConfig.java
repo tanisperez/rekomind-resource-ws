@@ -9,7 +9,7 @@ import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
 @Configuration
-public class ImageConfig {
+public class RoutingConfig {
 
 	@Value("${resource.routingLocation}")
 	private String routingLocation;
@@ -18,7 +18,7 @@ public class ImageConfig {
 	private String pathLocation;
 
 	@Bean
-	public RouterFunction<ServerResponse> imgRouter() {
+	public RouterFunction<ServerResponse> imageRouter() {
 		return RouterFunctions.resources(this.routingLocation, new FileSystemResource(this.pathLocation));
 	}
 }
