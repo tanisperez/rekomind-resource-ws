@@ -1,23 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
+	<Properties>
+		<Property name="logFolder">/var/log/resource-ws</Property>
+		<Property name="appFolder">${logFolder}/app</Property>
+		<Property name="apiFolder">${logFolder}/api</Property>
+	</Properties>
+	
     <Appenders>
-        <Console name="CONSOLE" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%t] %c{10} - %msg%n%throwable" />
-        </Console>
-        <Console name="PROPERTIES" target="SYSTEM_OUT">
+        <RollingFile name="APP" fileName="${logFolder}/app.log" filePattern="${appFolder}/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%t] %c{10} - %msg%n%throwable" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+				<SizeBasedTriggeringPolicy size="250 MB" />
+			</Policies>
+		</RollingFile>
+		<Console name="PROPERTIES" target="SYSTEM_OUT">
             <PatternLayout pattern="%msg%n" />
         </Console>
+        <RollingFile name="API" fileName="${logFolder}/api.log" filePattern="${apiFolder}/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] - %msg%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+				<SizeBasedTriggeringPolicy size="250 MB" />
+			</Policies>
+        </RollingFile>
     </Appenders>
  
     <Loggers>
         <Root level="info">
-            <AppenderRef ref="CONSOLE" />
+            <AppenderRef ref="APP" />
         </Root>
  
         <Logger name="org.springframework" level="info"/>
         <Logger name="com.github.tanisperez.recomendador.resource" level="info"/>
         <Logger name="com.github.tanisperez.recomendador.resource.property" additivity="false">
         	<AppenderRef ref="PROPERTIES"/>
+        </Logger>
+        <Logger name="com.github.tanisperez.recomendador.resource.http" level="info" additivity="false">
+        	<AppenderRef ref="API"/>
         </Logger>
     </Loggers>
 </Configuration>

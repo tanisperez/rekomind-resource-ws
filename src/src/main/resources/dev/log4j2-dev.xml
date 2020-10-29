@@ -7,6 +7,9 @@
         <Console name="PROPERTIES" target="SYSTEM_OUT">
             <PatternLayout pattern="%msg%n" />
         </Console>
+        <Console name="API" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] - %msg%n" />
+        </Console>
     </Appenders>
  
     <Loggers>
@@ -18,6 +21,9 @@
         <Logger name="com.github.tanisperez.recomendador.resource" level="info"/>
         <Logger name="com.github.tanisperez.recomendador.resource.property" additivity="false">
         	<AppenderRef ref="PROPERTIES"/>
+        </Logger>
+        <Logger name="com.github.tanisperez.recomendador.resource.http" level="info" additivity="false">
+        	<AppenderRef ref="API"/>
         </Logger>
     </Loggers>
 </Configuration>
