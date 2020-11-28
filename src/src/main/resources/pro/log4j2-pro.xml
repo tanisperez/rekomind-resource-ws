@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
 	<Properties>
-		<Property name="logFolder">/var/log/resource-ws</Property>
+		<Property name="logFolder">/var/log/rekomind-resource-ws</Property>
 		<Property name="appFolder">${logFolder}/app</Property>
 		<Property name="apiFolder">${logFolder}/api</Property>
 	</Properties>
@@ -32,11 +32,11 @@
         </Root>
  
         <Logger name="org.springframework" level="info"/>
-        <Logger name="com.github.tanisperez.recomendador.resource" level="info"/>
-        <Logger name="com.github.tanisperez.recomendador.resource.property" additivity="false">
+        <Logger name="com.rekomind.resource" level="info"/>
+        <Logger name="com.rekomind.resource.property" additivity="false">
         	<AppenderRef ref="PROPERTIES"/>
         </Logger>
-        <Logger name="com.github.tanisperez.recomendador.resource.http" level="info" additivity="false">
+        <Logger name="com.rekomind.resource.http" level="info" additivity="false">
         	<AppenderRef ref="API"/>
         </Logger>
     </Loggers>

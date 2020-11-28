@@ -1,4 +1,4 @@
-package com.github.tanisperez.recomendador.resource.http;
+package com.rekomind.resource.http;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;

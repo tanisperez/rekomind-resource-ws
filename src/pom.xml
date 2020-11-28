@@ -10,13 +10,13 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>com.github.tanisperez.recomendador</groupId>
+	<groupId>com.rekomind</groupId>
 	<artifactId>resource-ws</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Recomendador Resources WebService</name>
-	<description>Recomendador Resources WebService</description>
+	<name>Rekomind Resources WebService</name>
+	<description>Rekomind Resources WebService</description>
 
 	<!-- Properties -->
 	<properties>
@@ -98,7 +98,7 @@
 	</profiles>
 
 	<build>
-		<finalName>resource-ws</finalName>
+		<finalName>rekomind-resource-ws</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

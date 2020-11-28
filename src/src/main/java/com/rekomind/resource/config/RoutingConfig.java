@@ -1,4 +1,4 @@
-package com.github.tanisperez.recomendador.resource.config;
+package com.rekomind.resource.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
