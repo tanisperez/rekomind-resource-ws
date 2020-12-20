@@ -69,6 +69,11 @@
 					<groupId>org.mybatis.spring.boot</groupId>
 					<artifactId>mybatis-spring-boot-starter</artifactId>
 				</exclusion>
+				<!-- Spring Boot Starter Security -->
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+		    		<artifactId>spring-boot-starter-security</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		
