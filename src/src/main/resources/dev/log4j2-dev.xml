@@ -19,7 +19,7 @@
  
         <Logger name="org.springframework" level="info"/>
         <Logger name="com.rekomind.resource" level="info"/>
-        <Logger name="com.rekomind.resource.property" additivity="false">
+        <Logger name="com.rekomind.common.audit.property" additivity="false">
         	<AppenderRef ref="PROPERTIES"/>
         </Logger>
         <Logger name="com.rekomind.resource.http" level="info" additivity="false">
