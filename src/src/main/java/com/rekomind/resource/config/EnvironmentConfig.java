@@ -10,7 +10,7 @@ import com.rekomind.common.audit.property.PropertyLogger;
  * Environment Config using maven profiles.
  */
 @Configuration
-@PropertySource(value = "classpath:/${info.app.env.id}/application-${info.app.env.id}.properties")
+@PropertySource(value = "classpath:/${info.app.env.id}/application-${info.app.env.id}.properties", ignoreResourceNotFound = true)
 public class EnvironmentConfig {
 
 	/**
