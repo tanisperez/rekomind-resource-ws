@@ -34,3 +34,15 @@ docker run --name resource-ws -it --rm resource-ws:1.0-amd64
 * **--name**: Es el nombre que se le dará al contenedor una vez arrancado.
 * **-it**: Se indica que la ejecución sea interactiva con la consola actual. Así puedes hacer un Ctrl+C para finalizar el contenedor.
 * **--rm**: Indica que se borre el contenedor creado tras finalizar la ejecución.
+
+```
+docker build --no-cache -t rekomind-resource-ws:1.2.0 .
+
+docker run --name rekomind-resource-ws -it \
+	-v /Users/tanis/Dev/rekomind/rekomind-resource-ws/src/src/main/resources/local/:/etc/rekomind-resource-ws \
+	-v /Users/tanis/Dev/rekomind/rekomind-resource-ws/resources:/data/resources \
+	-e LOG4J2_CONFIG_FILE="/etc/rekomind-resource-ws/log4j2-local.xml" \
+	-e RESOURCES_PATH="/data/resources" \
+	-p 8082:8082 \
+	--rm rekomind-resource-ws:1.2.0
+```
