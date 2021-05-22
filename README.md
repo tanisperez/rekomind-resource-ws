@@ -42,7 +42,11 @@ docker run --name rekomind-resource-ws -it \
 	-v /Users/tanis/Dev/rekomind/rekomind-resource-ws/src/src/main/resources/local/:/etc/rekomind-resource-ws \
 	-v /Users/tanis/Dev/rekomind/rekomind-resource-ws/resources:/data/resources \
 	-e LOG4J2_CONFIG_FILE="/etc/rekomind-resource-ws/log4j2-local.xml" \
-	-e RESOURCES_PATH="/data/resources" \
+	-e RESOURCES_PATH="/data/resources/" \
 	-p 8082:8082 \
 	--rm rekomind-resource-ws:1.2.0
 ```
+
+# Para ver una imagen en local
+
+http://localhost:8082/rekomind-resource-ws/images/console.png
