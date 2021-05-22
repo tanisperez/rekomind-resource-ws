@@ -8,11 +8,9 @@ import com.rekomind.common.audit.property.PropertyLogger;
 
 /**
  * Environment Config using maven profiles.
- *
- * @author Estanislao Pérez Nartallo
  */
 @Configuration
-@PropertySource("classpath:/${info.app.env.id}/application-${info.app.env.id}.properties")
+@PropertySource(value = "classpath:/${info.app.env.id}/application-${info.app.env.id}.properties")
 public class EnvironmentConfig {
 
 	/**
@@ -25,4 +23,5 @@ public class EnvironmentConfig {
 	public PropertyLogger propertyLogger() {
 		return new PropertyLogger();
 	}
+
 }

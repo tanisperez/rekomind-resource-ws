@@ -12,10 +12,10 @@
 
 	<groupId>com.rekomind</groupId>
 	<artifactId>resource-ws</artifactId>
-	<version>1.1.0</version>
+	<version>1.2.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Rekomind Resources WebService</name>
+	<name>rekomind-resource-ws</name>
 	<description>Rekomind Resources WebService</description>
 
 	<!-- Properties -->
@@ -27,10 +27,7 @@
 		<argLine>-Duser.language=${user.language}</argLine>
 		
 		<!-- Dependencies version -->
-		<rekomind-common.version>1.0.0</rekomind-common.version>
-		
-		<apache-commons-lang3.version>3.11</apache-commons-lang3.version>
-		<apache-commons-collections4.version>4.4</apache-commons-collections4.version>
+		<rekomind-common.version>1.2.0</rekomind-common.version>
 	</properties>
 
 	<dependencies>
@@ -59,66 +56,47 @@
 			<artifactId>audit</artifactId>
 			<version>${rekomind-common.version}</version>
 			<exclusions>
-				<!-- Spring Boot Starter Web -->
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-web</artifactId>
 				</exclusion>
-				<!-- Mybatis Spring Boot Starter -->
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-log4j2</artifactId>
+				</exclusion>
 				<exclusion>
 					<groupId>org.mybatis.spring.boot</groupId>
 					<artifactId>mybatis-spring-boot-starter</artifactId>
 				</exclusion>
-				<!-- Spring Boot Starter Security -->
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
-		    		<artifactId>spring-boot-starter-security</artifactId>
+					<artifactId>spring-boot-starter-security</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		
-		<!-- Apache Commons Lang 3 -->
-		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-lang3</artifactId>
-		    <version>${apache-commons-lang3.version}</version>
-		</dependency>
-		
-		<!-- Apache Commons Collections 4 -->
-		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-collections4</artifactId>
-		    <version>${apache-commons-collections4.version}</version>
 		</dependency>
 	</dependencies>
 
 	<!-- Profiles -->
 	<profiles>
-		<!-- DEV -->
+		<!-- LOCAL -->
 		<profile>
-			<id>dev</id>
+			<id>local</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<profile.id>dev</profile.id>
-				<profile.name>Development</profile.name>
+				<profile.id>local</profile.id>
+				<profile.name>Local</profile.name>
+				<profile.log4j2.config>classpath:local/log4j2-local.xml</profile.log4j2.config>
 			</properties>
 		</profile>
-		<!-- PRE -->
+		<!-- DOCKER -->
 		<profile>
-			<id>pre</id>
+			<id>docker</id>
 			<properties>
-				<profile.id>pre</profile.id>
-				<profile.name>Preproduction</profile.name>
-			</properties>
-		</profile>
-		<!-- PRO -->
-		<profile>
-			<id>pro</id>
-			<properties>
-				<profile.id>pro</profile.id>
-				<profile.name>Production</profile.name>
+				<profile.id>docker</profile.id>
+				<profile.name>Docker</profile.name>
+				<profile.log4j2.config>${LOG4J2_CONFIG_FILE}</profile.log4j2.config>
 			</properties>
 		</profile>
 	</profiles>
