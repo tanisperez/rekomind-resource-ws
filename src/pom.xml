@@ -27,7 +27,7 @@
 		<argLine>-Duser.language=${user.language}</argLine>
 		
 		<!-- Dependencies version -->
-		<rekomind-common.version>1.2.0</rekomind-common.version>
+		<rekomind-common.version>1.7.1</rekomind-common.version>
 	</properties>
 
 	<dependencies>
