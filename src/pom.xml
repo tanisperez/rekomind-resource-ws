@@ -97,7 +97,7 @@
 			<properties>
 				<profile.id>docker</profile.id>
 				<profile.name>Docker</profile.name>
-				<profile.log4j2.config>${LOG4J2_CONFIG_FILE}</profile.log4j2.config>
+				<profile.log4j2.config>/etc/rekomind/rekomind-resource-ws/log4j2.xml</profile.log4j2.config>
 			</properties>
 		</profile>
 	</profiles>
