@@ -1,4 +1,4 @@
-# Resource-ws
+# Resource-ws (deprecated)
 Backend del servicio que expone recursos como imágenes alojadas en disco, utilizando Spring Boot 2.3 y Spring WebFlux.
 
 # Requisitos
