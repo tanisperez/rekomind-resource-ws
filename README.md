@@ -1,5 +1,6 @@
 # Resource-ws (deprecated)
-Backend del servicio que expone recursos como imágenes alojadas en disco, utilizando Spring Boot 2.3 y Spring WebFlux.
+
+This was the legacy rekomind images resources used in [rekomind](https://rekomind.com).
 
 # Requisitos
 Tener instalado un **JDK 11** y **Maven 3.6.X**. Es preferible utilizar un Eclipse reciente o Spring Tools Suite.
